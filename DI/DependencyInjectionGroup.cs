@@ -1,4 +1,6 @@
-﻿using Service.Services;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Service.Services;
 
 namespace DI
 {
@@ -6,6 +8,7 @@ namespace DI
     {
         public static IServiceCollection AddConfig(this IServiceCollection services, IConfiguration config)
         {
+            services.AddSingleton(config);
             return services;
         }
 
